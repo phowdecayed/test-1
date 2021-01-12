@@ -19,8 +19,8 @@ class FormatController extends Controller
 
         //fungsi untuk mengubah string menjadi beberapa bagian kecil dan menghapus char akhir dari
         //fungsi chunk_split
-        if (strlen($sanitize)%2==0) {
-            $format = rtrim(chunk_split($sanitize, '3', '-'), '-');
+        if (strlen($sanitize)==10) {
+            $format = substr($sanitize,0,3)."-".substr($sanitize,3,3)."-".substr($sanitize,6,2)."-".substr($sanitize,8,2);
         }else {
             $format = rtrim(chunk_split($sanitize, '3', '-'), '-');
         }
